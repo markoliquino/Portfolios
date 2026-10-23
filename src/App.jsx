@@ -90,11 +90,11 @@ function App() {
       <ParticleBackdrop />
       <div className="site-shell">
       <header className="topbar">
-        <a className="wordmark" href="#home" aria-label="Mark Anthony Oliquino home"><span className="mark"><img src="/mark-anthony-photo.jpg" alt="" /></span><span>Mark Anthony Oliquino</span></a>
+        <div className="wordmark"><a className="mark" href="#home" aria-label="Mark Anthony Oliquino home"><img src="/mark-anthony-photo.jpg" alt="" /></a><div className="wordmark-copy"><a className="wordmark-name" href="#home">Mark Anthony Oliquino</a><div className="wordmark-contact"><a href="tel:09185507126">09185507126</a><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer">markanthonyoliquino45@gmail.com</a></div></div></div>
         <nav aria-label="Main navigation">
-          <a href="#about">Profile</a><a href="#experience">Experience</a><a href="#work">Technical work</a><a href="#resume">Résumé</a>
+          <a href="#about">Profile</a><a href="#experience">Experience</a><a href="#work">Technical work</a>
         </nav>
-        <a className="top-contact" href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer">Let’s talk <Arrow diagonal /></a>
+        <a className="top-contact" href="#viber-contact">Message on Viber <Arrow diagonal /></a>
       </header>
 
       <main>
@@ -137,12 +137,10 @@ function App() {
           <div className="project-list">{projects.map((project, index) => <article className={`project project-${index + 1}`} key={project.number}><div className={`project-visual${project.image ? ' project-photo' : ''}`}>{project.image ? <img className="project-photo-image" src={project.image} alt={`${project.name} technical work`} /> : <div className="project-shape"><span>{project.number}</span><b>{index === 0 ? 'N' : index === 1 ? 'g.' : 'f'}</b></div>}<span className="visual-tag">{project.type}</span></div><div className="project-info"><div><span className="project-number">{project.number} / 03</span><h3>{project.name} <Arrow diagonal /></h3><p>{project.description}</p></div><span className="project-stack">{project.stack}</span></div></article>)}</div>
         </section>
 
-        <section className="resume" id="resume"><div className="resume-heading"><div><p className="section-kicker">FULL RÉSUMÉ</p><h2>Experience in <em>detail.</em></h2></div><a className="button button-dark" href="/Mark-Anthony-Oliquino-CV.pdf" target="_blank" rel="noreferrer">Open or download CV <Arrow diagonal /></a></div><iframe className="resume-viewer" title="Mark Anthony Oliquino CV" src="/Mark-Anthony-Oliquino-CV.pdf#view=FitH" /></section>
-
-        <section className="contact" id="contact"><p className="section-kicker">05 / CONTACT</p><div className="contact-main"><h2>Need reliable<br /><em>IT support?</em></h2><a className="contact-circle" href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" aria-label="Email Mark Anthony Oliquino"><span>AVAILABLE FOR<br />IT SUPPORT<br />OPPORTUNITIES</span><b>↗</b></a></div><div className="contact-bottom"><p>I’m ready to help keep your people and systems productive.<br />Let’s talk about your support needs.</p><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer">markanthonyoliquino45@gmail.com <Arrow diagonal /></a></div></section>
+        <section className="contact" id="contact"><p className="section-kicker">05 / CONTACT</p><div className="contact-main"><h2>Need reliable<br /><em>IT support?</em></h2><a className="contact-circle" href="#viber-contact" aria-label="Message Mark Anthony Oliquino on Viber"><span>MESSAGE ME<br />ON VIBER</span><b>↗</b></a></div><div className="contact-bottom"><p>I’m ready to help keep your people and systems productive.<br />Let’s talk about your support needs.</p><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer">markanthonyoliquino45@gmail.com <Arrow diagonal /></a></div><div className="viber-card" id="viber-contact"><div className="viber-copy"><p className="section-kicker">VIBER · DIRECT CONTACT</p><h3>Scan to add me<br />and start a chat.</h3><p>Open Viber and scan this code to add my number, then message me directly.</p><a href="tel:09185507126">09185507126 <Arrow diagonal /></a></div><a className="viber-qr-link" href="/viber-qr.jpg" target="_blank" rel="noreferrer" aria-label="Open the Viber QR code"><img className="viber-qr" src="/viber-qr.jpg" alt="Viber QR code for Mark Anthony Oliquino" /></a></div></section>
       </main>
 
-      <footer className="footer"><a className="wordmark" href="#home"><span className="mark"><img src="/mark-anthony-photo.jpg" alt="" /></span><span>Mark Anthony Oliquino</span></a><span>IT TECHNICAL SUPPORT · © 2025</span><div><a href="https://www.linkedin.com/">LINKEDIN <Arrow diagonal /></a><a href="https://github.com/">GITHUB <Arrow diagonal /></a></div></footer>
+      <footer className="footer"><div className="wordmark"><a className="mark" href="#home" aria-label="Mark Anthony Oliquino home"><img src="/mark-anthony-photo.jpg" alt="" /></a><div className="wordmark-copy"><a className="wordmark-name" href="#home">Mark Anthony Oliquino</a><div className="wordmark-contact"><a href="tel:09185507126">09185507126</a><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer">markanthonyoliquino45@gmail.com</a></div></div></div><span>IT TECHNICAL SUPPORT · © 2025</span><div><a href="https://www.linkedin.com/">LINKEDIN <Arrow diagonal /></a><a href="https://github.com/">GITHUB <Arrow diagonal /></a></div></footer>
       </div>
     </>
   )
