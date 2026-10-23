@@ -11,8 +11,8 @@ const technicalGroups = [
 ]
 
 const training = [
-  { name: 'CCNA', status: 'Training', detail: 'Networking concepts and configuration; certification not claimed' },
-  { name: 'Cybersecurity', status: 'Training', detail: 'Security fundamentals; certification not claimed' },
+  { name: 'CCNA', status: 'Training', detail: 'Networking concepts and configuration' },
+  { name: 'Cybersecurity', status: 'Training', detail: 'Security fundamentals' },
 ]
 
 const projects = [
@@ -172,8 +172,8 @@ function App() {
         </section>
 
         <section className="credentials section-grid" id="credentials">
-          <div className="section-label"><span>05 / CERTIFICATIONS & TRAINING</span><span className="label-rule" /></div>
-          <div className="credentials-content"><p className="section-kicker">PROFESSIONAL DEVELOPMENT</p><h2>Building skills<br />with <em>focused training.</em></h2><p className="credentials-note">Training is listed below; no certification is claimed.</p><div className="training-list">{training.map((item) => <article className="training-item" key={item.name}><div><h3>{item.name}</h3><p>{item.detail}</p></div><span>{item.status}</span></article>)}</div></div>
+          <div className="section-label"><span>05 / TECHNICAL TRAINING</span><span className="label-rule" /></div>
+          <div className="credentials-content"><p className="section-kicker">PROFESSIONAL DEVELOPMENT</p><h2>Building skills<br />with <em>focused training.</em></h2><p className="credentials-note">Training topics only. I do not currently hold these certifications.</p><div className="training-list">{training.map((item) => <article className="training-item" key={item.name}><div><h3>{item.name}</h3><p>{item.detail}</p></div><span>{item.status}</span></article>)}</div></div>
         </section>
 
         <section className="resume section-grid" id="resume">
