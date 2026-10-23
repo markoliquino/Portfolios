@@ -25,6 +25,16 @@ function Arrow({ diagonal = false }) {
   return <span aria-hidden="true">{diagonal ? '↗' : '→'}</span>
 }
 
+function ServiceIcon({ type }) {
+  const paths = {
+    hardware: <><rect x="6" y="6" width="12" height="12" rx="2" /><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4" /><circle cx="12" cy="12" r="2" /></>,
+    network: <><circle cx="12" cy="5" r="2.5" /><circle cx="6" cy="18" r="2.5" /><circle cx="18" cy="18" r="2.5" /><path d="m10.8 7.2-3.5 8.6m5.9-8.6 3.5 8.6M8.5 18h7" /></>,
+    server: <><rect x="4" y="3" width="16" height="8" rx="1.5" /><rect x="4" y="13" width="16" height="8" rx="1.5" /><path d="M8 7h.01M8 17h.01M12 7h5m-5 10h5" /></>,
+    cctv: <><path d="m4 8 12-4 4 8-12 4z" /><path d="m8 15 1 5m6-7 4 4m-7-6 2 5" /><circle cx="15" cy="8" r="1" /></>,
+  }
+  return <svg className="hero-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[type]}</svg>
+}
+
 function ParticleBackdrop() {
   const canvasRef = useRef(null)
 
@@ -102,20 +112,25 @@ function App() {
       <ParticleBackdrop />
       <div className="site-shell">
       <header className="topbar">
-        <div className="wordmark"><a className="mark" href="#home" aria-label="Mark Anthony Oliquino home"><img src="/mark-anthony-photo.jpg" alt="" /></a><div className="wordmark-copy"><a className="wordmark-name" href="#home">Mark Anthony Oliquino</a><div className="wordmark-contact"><a href="tel:09185507126">09185507126</a><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer">markanthonyoliquino45@gmail.com</a></div></div></div>
+        <a className="portfolio-brand" href="#home">IT PORTFOLIO<span>.</span></a>
         <nav aria-label="Main navigation">
-          <a href="#about">Profile</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#work">Projects</a><a href="#credentials">Training</a><a href="#resume">Resume</a><a href="#contact">Contact</a>
+          <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Projects</a>
         </nav>
-        <a className="top-contact" href="#viber-contact">Message on Viber <Arrow diagonal /></a>
       </header>
 
       <main>
         <section className="hero" id="home">
           <div className="hero-copy">
-            <p className="eyebrow"><span className="availability-dot" /> IT SUPPORT · HARDWARE</p>
-            <h1>Reliable systems.<br />Practical fixes.<br /><em>People first.</em></h1>
-            <p className="hero-intro">I’m Mark Anthony Oliquino — an IT technical support specialist focused on hardware, endpoint setup, and clear, dependable user support.</p>
-            <div className="hero-actions"><a className="button button-dark" href="#experience">View my experience <Arrow /></a><a className="text-link" href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer">Contact me <Arrow diagonal /></a></div>
+            <p className="eyebrow"><span className="availability-dot" /> IT SUPPORT & INFRASTRUCTURE | MARK ANTHONY OLIQUINO</p>
+            <h1>Hardware Specialist &amp;<br />IT Technical Support</h1>
+            <p className="hero-intro">Focused on computer hardware, network troubleshooting, system maintenance, and reliable IT infrastructure.</p>
+            <div className="hero-actions"><a className="button button-dark" href="#work">View IT projects <Arrow /></a><a className="button button-outline" href="#contact">Contact me <Arrow diagonal /></a></div>
+            <div className="hero-services" aria-label="Technical support specialties">
+              <a className="hero-service-card" href="#skills"><ServiceIcon type="hardware" /><span>Hardware support</span></a>
+              <a className="hero-service-card" href="#skills"><ServiceIcon type="network" /><span>Networking</span></a>
+              <a className="hero-service-card" href="#skills"><ServiceIcon type="server" /><span>Server maintenance</span></a>
+              <a className="hero-service-card" href="#skills"><ServiceIcon type="cctv" /><span>CCTV &amp; security</span></a>
+            </div>
           </div>
           <div className="hero-art terminal-art" aria-label="Illustrated computer hardware diagnostic screen">
             <div className="terminal-top"><span><i /> SYSTEM STATUS</span><span>WORKSTATION_01</span></div>
